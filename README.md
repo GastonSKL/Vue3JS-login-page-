@@ -12,6 +12,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+npm version 8.11.0
+
 ```sh
 npm install
 ```
