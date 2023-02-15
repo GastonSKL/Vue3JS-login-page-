@@ -1,25 +1,21 @@
 <script setup>
-import axios from 'axios';
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import axios from "axios";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const lista = ref([]);
 const router = useRouter();
 
-const get = () =>{
-    let direccion = "https://api.solodata.es/pacientes?page=1";
-    axios.get(direccion)
-    .then(e => lista.value = e.data);
-} 
+const get = () => {
+  let direccion = "https://api.solodata.es/pacientes?page=1";
+  axios.get(direccion).then((e) => (lista.value = e.data));
+};
 
 get();
 
-const editar = (PacienteId) =>{
-    router.push(`editar/${PacienteId}`);
-}
-
-
-
+const editar = (PacienteId) => {
+  router.push(`editar/${PacienteId}`);
+};
 </script>
 
 <template>
@@ -39,13 +35,19 @@ const editar = (PacienteId) =>{
       </thead>
       <tbody>
         <tr v-for="item in lista" @click="editar(item.PacienteId)">
-          <th scope="row">{{item.PacienteId}}</th>
-          <td>{{item.Nombre}}</td>
-          <td>{{item.DNI}}</td>
-          <td>{{item.Telefono}}</td>
-          <td>{{item.Correo}}</td>
+          <th scope="row">{{ item.PacienteId }}</th>
+          <td>{{ item.Nombre }}</td>
+          <td>{{ item.DNI }}</td>
+          <td>{{ item.Telefono }}</td>
+          <td>{{ item.Correo }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
+<style>
+td{
+    cursor: pointer;
+}
+</style>

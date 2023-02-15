@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary ">
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">App</a>
       <button
